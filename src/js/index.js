@@ -1,7 +1,12 @@
-let response = prompt('Hello there!');
+import axios from 'axios';
 
-if(response === 'General Kenobi') {
-    alert('You are a bold one.');
-} else {
-    alert('Hi');
+async function getRandomPage() {
+    try {
+        const result = await axios('https://cors-anywhere.herokuapp.com/https://www.mediawiki.org/w/api.php?action=query&list=random&rnnamespace=0&rnlimit=1');
+        console.log(result);
+    } catch(error) {
+        console.log(error);
+    }
 }
+
+getRandomPage();
