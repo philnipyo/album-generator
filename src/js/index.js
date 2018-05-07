@@ -28,5 +28,19 @@ async function getRandomImage() {
     }
 }
 
+// Get random quote from What Does Trump Think API
+async function getRandomQuote() {
+    try {
+        const result = await axios('https://api.whatdoestrumpthink.com/api/v1/quotes/random');
+        let quote = result.data.message;
+
+        console.log(result);
+        console.log(quote);
+    } catch(error) {
+        console.log(error);
+    }
+}
+
 getRandomPage();
 getRandomImage();
+getRandomQuote();
