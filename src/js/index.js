@@ -2,13 +2,12 @@ import axios from 'axios';
 import { CORS } from './config';
 import { unsplashAccessKey } from '../../api.js';
 
-// Get random page from Wikipedia API to serve as album title
+// Get random page from Wikipedia API to serve as artist title
 async function getRandomPage() {
     try {
         const result = await axios(`${CORS}https://en.wikipedia.org/w/api.php?action=query&list=random&rnnamespace=0&rnlimit=1&format=json`);
         let title = result.data.query.random[0].title;
 
-        console.log(result);
         console.log(title);
     } catch(error) {
         console.log(error);
@@ -21,21 +20,21 @@ async function getRandomImage() {
         const result = await axios(`${CORS}https://api.unsplash.com/photos/random/?client_id=${unsplashAccessKey}`);
         let image = result.data.urls.small;
 
-        console.log(result);
         console.log(image);
     } catch(error) {
         console.log(error);
     }
 }
 
-// Get random quote from What Does Trump Think API
+// Get random quote from What Does Trump Think API to serve as album name
 async function getRandomQuote() {
     try {
         const result = await axios('https://api.whatdoestrumpthink.com/api/v1/quotes/random');
         let quote = result.data.message;
+        let q = JSON.stringify(quote).split(' ');
 
-        console.log(result);
         console.log(quote);
+        console.log(q);
     } catch(error) {
         console.log(error);
     }
