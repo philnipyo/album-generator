@@ -26,15 +26,18 @@ async function getRandomImage() {
     }
 }
 
-// Get random quote from What Does Trump Think API to serve as album name
+// Get random quote from What Does Trump Think API to serve as album name based on tbe last 3-5 words
 async function getRandomQuote() {
     try {
         const result = await axios('https://api.whatdoestrumpthink.com/api/v1/quotes/random');
         let quote = result.data.message;
         let q = JSON.stringify(quote).split(' ');
+        let i = Math.floor((Math.random() * 5) + 3);
+        let name = q.slice(q.length - i, q.length).join(' ');
 
         console.log(quote);
         console.log(q);
+        console.log(name);
     } catch(error) {
         console.log(error);
     }
