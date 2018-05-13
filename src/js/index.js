@@ -35,6 +35,7 @@ async function getRandomQuote() {
         let i = Math.floor((Math.random() * 3) + 3); //Better way to select the last 3-5 words; (max-min + 1) + min -> 5 - 3 + 1 = 3;
 
         let name = q.slice(q.length - i, q.length).join(' ');
+        name = name.replace(".\"", '');
 
         console.log(quote);
         console.log(q);
