@@ -29,8 +29,8 @@ async function getRandomImage() {
 // Get random quote from What Does Trump Think API to serve as album name based on tbe last 3-5 words
 async function getRandomQuote() {
     try {
-        const result = await axios('https://api.whatdoestrumpthink.com/api/v1/quotes/random');
-        let quote = result.data.message;
+        const result = await axios('https://talaikis.com/api/quotes/random/');
+        let quote = result.data.quote;
         let q = JSON.stringify(quote).split(' ');
         let i = Math.floor((Math.random() * 3) + 3); //Better way to select the last 3-5 words; (max-min + 1) + min -> 5 - 3 + 1 = 3;
 
