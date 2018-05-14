@@ -26,7 +26,7 @@ async function getRandomImage() {
     }
 }
 
-// Get random quote from What Does Trump Think API to serve as album name based on tbe last 3-5 words
+// Get random quote from Tadas Talaikis' API to serve as album name based on tbe last 3-5 words
 async function getRandomQuote() {
     try {
         const result = await axios('https://talaikis.com/api/quotes/random/');
@@ -36,9 +36,8 @@ async function getRandomQuote() {
 
         let name = q.slice(q.length - i, q.length).join(' ');
         name = name.replace(".\"", '');
+        name = name.charAt(0).toUpperCase() + name.slice(1);
 
-        console.log(quote);
-        console.log(q);
         console.log(name);
     } catch(error) {
         console.log(error);
