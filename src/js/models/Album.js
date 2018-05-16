@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { elements } from '../views/base';
 
 export async function getRandomQuote() {
     try {
@@ -11,7 +12,7 @@ export async function getRandomQuote() {
         name = name.replace(".\"", '');
         name = name.charAt(0).toUpperCase() + name.slice(1);
 
-        console.log(name);
+        elements.album.insertAdjacentHTML('afterbegin', name);
     } catch(error) {
         console.log(error);
     }
