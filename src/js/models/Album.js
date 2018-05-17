@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { elements } from '../views/base';
 
+// Get random quote from Tadas Talaikis' API to serve as album name based on tbe last 3-5 words
 export async function getRandomQuote() {
     try {
         const result = await axios('https://talaikis.com/api/quotes/random/');
@@ -16,4 +17,8 @@ export async function getRandomQuote() {
     } catch(error) {
         console.log(error);
     }
+}
+
+export const clearQuote = () => {
+    elements.album.innerHTML = '';
 }
