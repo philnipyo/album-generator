@@ -1,6 +1,5 @@
 import axios from 'axios';
-import { CORS } from './config';
-import { unsplashAccessKey } from '../../api.js';
+import { CORS, unsplashAccessKey } from './config';
 import { getRandomPage, clearPage } from './models/Artist';
 import { getRandomImage, clearImage, clearPhotographerInfo } from './models/Image';
 import { getRandomQuote, clearQuote } from './models/Album';
