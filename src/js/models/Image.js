@@ -8,7 +8,7 @@ export async function getRandomImage() {
         const result = await axios(`${CORS}https://api.unsplash.com/photos/random/?client_id=${unsplashAccessKey}`);
         let image = result.data.urls.small;
         let photographerName = result.data.user.name;
-        let photographerUserName = result.data.user.username
+        let photographerUserName = result.data.user.username;
 
         //Sets image src to JSON's small image result
         elements.image.src=(image);
