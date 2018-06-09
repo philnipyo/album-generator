@@ -4,6 +4,7 @@ import { getRandomPage, clearPage } from './models/Artist';
 import { getRandomImage, clearImage, clearPhotographerInfo } from './models/Image';
 import { getRandomQuote, clearQuote } from './models/Album';
 import { elements } from './views/base';
+import '../css/styles.css';
 
 elements.generate.addEventListener('click', e => {
     // Clear results if any
