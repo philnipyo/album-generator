@@ -13,7 +13,10 @@ export async function getRandomQuote() {
         name = name.replace(".\"", '');
         name = name.charAt(0).toUpperCase() + name.slice(1);
 
-        elements.album.insertAdjacentHTML('afterbegin', name);
+        // Create template literal for the album name
+        let albumHTML = `<h2>Album name: ${name}</h2>`
+
+        elements.album.insertAdjacentHTML('afterbegin', albumHTML);
     } catch(error) {
         console.log(error);
     }
