@@ -11,7 +11,7 @@ export async function getRandomImage() {
         let photographerUserName = result.data.user.username;
 
         //Sets image src to JSON's small image result
-        elements.image.src=(image);
+        elements.image.insertAdjacentHTML('afterbegin', `<img src="${image}">`);
 
         // Inserts link to attribute photographer and Unsplash
         elements.photographer.insertAdjacentHTML('afterbegin', `Photo by <a href="https://unsplash.com/@${photographerUserName}?utm_source=album_creator&utm_medium=referral">${photographerName}</a> on <a href="https://unsplash.com/?utm_source=album_creator&utm_medium=referral">Unsplash</a>`);
@@ -21,7 +21,7 @@ export async function getRandomImage() {
 }
 
 export const clearImage = () => {
-    elements.image.src='';
+    elements.image.innerHTML='';
 }
 
 export const clearPhotographerInfo = () => {
