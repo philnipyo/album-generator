@@ -8,7 +8,9 @@ export async function getRandomPage() {
         const result = await axios(`${CORS}https://en.wikipedia.org/w/api.php?action=query&list=random&rnnamespace=0&rnlimit=1&format=json`);
         let title = result.data.query.random[0].title;
 
-        elements.artist.insertAdjacentHTML('afterbegin', title);
+        let artistHTML = `Artist name: ${title}`;
+
+        elements.artist.insertAdjacentHTML('afterbegin', artistHTML);
     } catch(error) {
         console.log(error);
     }
