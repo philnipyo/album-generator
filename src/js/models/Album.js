@@ -14,7 +14,7 @@ export async function getRandomQuote() {
         name = name.charAt(0).toUpperCase() + name.slice(1);
 
         // Create template literal for the album name
-        let albumHTML = `<h2>Album name: ${name}</h2>`
+        let albumHTML = `Album name: ${name}`;
 
         elements.album.insertAdjacentHTML('afterbegin', albumHTML);
     } catch(error) {
