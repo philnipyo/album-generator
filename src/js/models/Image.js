@@ -14,7 +14,7 @@ export async function getRandomImage() {
         elements.image.insertAdjacentHTML('afterbegin', `<img src="${image}">`);
 
         // Inserts link to attribute photographer and Unsplash
-        elements.photographer.insertAdjacentHTML('afterbegin', `Photo by <a href="https://unsplash.com/@${photographerUserName}?utm_source=album_creator&utm_medium=referral">${photographerName}</a> on <a href="https://unsplash.com/?utm_source=album_creator&utm_medium=referral">Unsplash</a>`);
+        elements.photographer.insertAdjacentHTML('afterbegin', `Photo by <a href="https://unsplash.com/@${photographerUserName}?utm_source=album_creator&utm_medium=referral" target="_blank" rel="noopener noreferrer">${photographerName}</a> on <a href="https://unsplash.com/?utm_source=album_creator&utm_medium=referral" target="_blank" rel="noopener noreferrer">Unsplash</a>`);
     } catch(error) {
         console.log(error);
     }
